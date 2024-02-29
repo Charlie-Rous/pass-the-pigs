@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
-public class CharlieBot extends Bot {
+public class ScaredBot extends Bot {
     final int MINIMUM_SCORE = 21;
+    int numRolls = 0;
 
-    public CharlieBot(String s) {
+    public ScaredBot(String s) {
         super(s);
-        strategy = "Balanced";
+        strategy = "Dont roll more than 5";
     }
 
     // basic strategy
@@ -14,18 +15,26 @@ public class CharlieBot extends Bot {
         int distanceToWin = winningScore - getMax(otherScores);
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);
 
-        if (distanceToFirst > distanceToWin) {
+        if (handScore == 0) {
+            numRolls = 1;
+            return true;
+        }
+        if (numRolls >= 5) {
+            return false;
+        }
 
+        if (distanceToFirst > distanceToWin) {
+            numRolls++;
             return true;
         }
         if (winningScore - myScore < 10) {
-
+            numRolls++;
             return true;
         }
         if (handScore >= MINIMUM_SCORE) {
             return false;
         } else {
-
+            numRolls++;
             return true;
         }
 

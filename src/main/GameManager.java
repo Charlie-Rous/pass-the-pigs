@@ -21,9 +21,10 @@ public class GameManager {
         players.add(new RandomBot("RandomBot"));
         players.add(new MinBot("MinBot"));
         players.add(new SuperBot("SuperBot"));
+        players.add(new ScaredBot("ScaredBot"));
         
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             scores.add(0);
         }
 
