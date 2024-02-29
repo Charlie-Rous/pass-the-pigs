@@ -5,7 +5,6 @@ public class GameManager {
     private ArrayList<Integer> scores = new ArrayList<Integer>(20);
     private Pigs pigs;
     private final int WINNING_SCORE;
-    
 
     public GameManager(int w) {
         WINNING_SCORE = w;
@@ -24,8 +23,7 @@ public class GameManager {
         for (int i = 0; i < 6; i++) {
             scores.add(0);
         }
-        
-        
+
     }
 
     public void playTurn() {

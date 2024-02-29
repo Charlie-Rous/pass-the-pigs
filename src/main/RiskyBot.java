@@ -8,7 +8,6 @@ public class RiskyBot extends Bot {
         strategy = "Pass if handscore is over " + MINIMUM_SCORE;
     }
 
-    
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
         int distanceToWin = winningScore - getMax(otherScores);
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);

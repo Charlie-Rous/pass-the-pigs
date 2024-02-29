@@ -11,13 +11,17 @@ public class Human extends Player {
     }
 
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
-        System.out.println("Do you want to roll? [1] yes | [2] no");
-        int answer = scanner.nextInt();
-        if (answer == 1) {
-            return true;
-        } else {
-            return false;
-        } 
+        while (true) {
+            System.out.println("Do you want to roll? [1] yes | [2] no");
+            int answer = scanner.nextInt();
+            if (answer == 1) {
+                return true;
+            } else if (answer == 2) {
+                return false;
+            } else {
+                System.out.println("Enter a valid answer. (1 or 2)");
+            }
+        }
 
     }
 }
