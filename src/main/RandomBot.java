@@ -1,24 +1,23 @@
 import java.util.ArrayList;
 
-public class FirstPlaceBot extends Bot {
-
+public class RandomBot extends Bot {
     private String strategy;
 
-    public FirstPlaceBot(String s) {
+    public RandomBot(String s) {
         super(s);
-        strategy = "Chace First Place";
+        strategy = "50 50 chance";
     }
 
+    // basic strategy
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
 
-        if (handScore < MINIMUM_SCORE) {
+        if (handScore == 0) {
             return true;
-        } else if (getMax(otherScores) > (myScore + handScore)) {
+        } else if (Math.random() < .5) {
             return true;
         } else {
             return false;
         }
 
     }
-
 }

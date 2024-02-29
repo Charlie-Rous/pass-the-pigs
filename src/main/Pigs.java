@@ -30,6 +30,4 @@ public class Pigs {
         return roll;
     }
 
-    
-
 }

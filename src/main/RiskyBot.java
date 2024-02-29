@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
-public class Bot extends Player {
-    final int MINIMUM_SCORE = 10;
+public class RiskyBot extends Bot {
+    final int MINIMUM_SCORE = 20;
     private String strategy;
 
-    public Bot(String s) {
+    public RiskyBot(String s) {
         super(s);
-        strategy = "BasicBot";
+        strategy = "Pass if handscore is over " + MINIMUM_SCORE;
     }
 
-    // basic strategy
+    
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
         int distanceToWin = winningScore - getMax(otherScores);
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);
 
-        //if another player is closer to winning then the bot is to that player
+        // if another player is closer to winning then the bot is to that player
         if (distanceToWin < distanceToFirst) {
             return true;
         } else if (handScore >= MINIMUM_SCORE) {
@@ -23,15 +23,5 @@ public class Bot extends Player {
             return true;
         }
 
-    }
-
-    public int getMax(ArrayList<Integer> scores) {
-        int maximum = Integer.MIN_VALUE;
-        for (Integer i : scores) {
-            if (i > maximum) {
-                maximum = i;
-            }
-        }
-        return maximum;
     }
 }
