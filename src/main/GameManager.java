@@ -13,14 +13,15 @@ public class GameManager {
     }
 
     private void populatePlayers() {
-        players.add(new Human("Player"));
         players.add(new Bot("BasicBot"));
         players.add(new FirstPlaceBot("FirstPlaceBot"));
-        players.add(new RiskyBot("RiskyBot"));
-        players.add(new WimpyBot("WimpyBot"));
+        players.add(new RiskyBotCR("RiskyBot"));
+        players.add(new WimpyBotCR("WimpyBot"));
         players.add(new RandomBot("RandomBot"));
+        players.add(new MinBot("MinBot"));
+        players.add(new SuperBot("SuperBot"));
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             scores.add(0);
         }
 
@@ -47,7 +48,8 @@ public class GameManager {
                     System.out.println();
                 }
 
-                if (handScore + scores.get(i) > WINNING_SCORE) {
+                if (handScore + scores.get(i) >= WINNING_SCORE) {
+                    scores.set(i, scores.get(i) + handScore);
                     System.out.println(player.getName() + " Wins!!! Their strategy was " + player.getStrategy());
                     return;
                 }
@@ -83,7 +85,7 @@ public class GameManager {
         return maximum;
     }
 
-    private int calcScore(String[] roll) {
+    public int calcScore(String[] roll) {
 
         int sum = 0;
         if ((roll[0].equals("No Dot") && roll[1].equals("Dot"))

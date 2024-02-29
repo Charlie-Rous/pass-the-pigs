@@ -13,8 +13,8 @@ public class Bot extends Player {
         int distanceToWin = winningScore - getMax(otherScores);
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);
 
-        // if another player is closer to winning then the bot is to that player
-        if (distanceToWin < distanceToFirst) {
+        
+        if (distanceToWin < distanceToFirst) { // if another player is closer to winning then the bot is to that player
             return true;
         } else if (handScore >= MINIMUM_SCORE) {
             return false;

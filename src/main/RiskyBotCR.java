@@ -1,17 +1,21 @@
 import java.util.ArrayList;
 
-public class WimpyBot extends Bot {
-    final int MINIMUM_SCORE = 5;
+public class RiskyBotCR extends Bot {
+    final int MINIMUM_SCORE = 20;
 
-    public WimpyBot(String s) {
+    public RiskyBotCR(String s) {
         super(s);
         strategy = "Pass if handscore is over " + MINIMUM_SCORE;
     }
 
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
+        int distanceToWin = winningScore - getMax(otherScores);
+        int distanceToFirst = getMax(otherScores) - (myScore + handScore);
 
         // if another player is closer to winning then the bot is to that player
-        if (handScore >= MINIMUM_SCORE) {
+        if (distanceToWin < distanceToFirst) {
+            return true;
+        } else if (handScore >= MINIMUM_SCORE) {
             return false;
         } else {
             return true;

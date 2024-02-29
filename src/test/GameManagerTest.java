@@ -1,14 +1,20 @@
 package test;
 
-import org.junit.*;
+
+import static org.junit.Assert.*;		
+
+import org.junit.Test;
 
 import GameManager;
 
 
 public class GameManagerTest {
-    @Test
-    public void test() {
+    
+    public void testCalcScore() {
         GameManager gm = new GameManager(100);
-        assertEquals(20, gm.calcScore({"Razorback", "Razorback"}));
+        String[] roll = {"Razorback", "Razorback"};
+        int result = gm.calcScore(roll);
+        assertEquals(20, result);
+       
     }
 }
