@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class CharlieBot extends Bot {
+public class FirstPlaceCharlieBot extends Bot {
     final int MINIMUM_SCORE = 21;
 
-    public CharlieBot(String s) {
+    public FirstPlaceCharlieBot(String s) {
         super(s);
-        strategy = "Balanced";
+        strategy = "Balanced + Chace First";
     }
 
     // basic strategy
@@ -15,18 +15,17 @@ public class CharlieBot extends Bot {
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);
 
         if (distanceToFirst > distanceToWin) {
-
             return true;
         }
         if (winningScore - myScore < 10) {
-
             return true;
         }
         if (handScore < MINIMUM_SCORE) {
-            return false;
-        } else {
-
             return true;
+        } else if (getMax(otherScores) > (myScore + handScore)) {
+            return true;
+        } else {
+            return false;
         }
 
     }
