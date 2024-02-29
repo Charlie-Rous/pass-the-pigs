@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Human extends Player {
     private static Scanner scanner;
-    private String strategy;
 
     public Human(String name) {
         super(name);

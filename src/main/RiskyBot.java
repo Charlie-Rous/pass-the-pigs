@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class RiskyBot extends Bot {
     final int MINIMUM_SCORE = 20;
-    private String strategy;
 
     public RiskyBot(String s) {
         super(s);

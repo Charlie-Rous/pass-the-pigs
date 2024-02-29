@@ -2,11 +2,10 @@ import java.util.ArrayList;
 
 public class Bot extends Player {
     final int MINIMUM_SCORE = 10;
-    private String strategy;
 
     public Bot(String s) {
         super(s);
-        strategy = "BasicBot";
+        strategy = "Basic Bot";
     }
 
     // basic strategy

@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class RandomBot extends Bot {
-    private String strategy;
 
     public RandomBot(String s) {
         super(s);

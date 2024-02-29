@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class WimpyBot extends Bot {
     final int MINIMUM_SCORE = 5;
-    private String strategy;
+    
 
     public WimpyBot(String s) {
         super(s);

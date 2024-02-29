@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class FirstPlaceBot extends Bot {
 
-    private String strategy;
 
     public FirstPlaceBot(String s) {
         super(s);
