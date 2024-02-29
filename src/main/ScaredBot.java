@@ -27,7 +27,7 @@ public class ScaredBot extends Bot {
             numRolls++;
             return true;
         }
-        if (winningScore - myScore < 10) {
+        if (winningScore - myScore < winningScore * .1) {
             numRolls++;
             return true;
         }

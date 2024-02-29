@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class Player {
-    String name;
-    String strategy;
+public abstract class Player {
+    protected String name;
+    protected String strategy;
 
     public Player(String name) {
         this.name = name;

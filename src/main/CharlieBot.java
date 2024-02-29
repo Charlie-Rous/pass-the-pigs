@@ -18,7 +18,7 @@ public class CharlieBot extends Bot {
 
             return true;
         }
-        if (winningScore - myScore < 10) {
+        if (winningScore - myScore < winningScore * .1) {
 
             return true;
         }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class FirstPlaceCharlieBot extends Bot {
-    final int MINIMUM_SCORE = 21;
+    final int MINIMUM_SCORE = 24;
 
     public FirstPlaceCharlieBot(String s) {
         super(s);
@@ -13,11 +13,11 @@ public class FirstPlaceCharlieBot extends Bot {
 
         int distanceToWin = winningScore - getMax(otherScores);
         int distanceToFirst = getMax(otherScores) - (myScore + handScore);
-
-        if (distanceToFirst > distanceToWin) {
+        
+        if (distanceToFirst > distanceToWin || distanceToWin <= winningScore * .1) {
             return true;
         }
-        if (winningScore - myScore < 10) {
+        if (winningScore - myScore < winningScore * .1) {
             return true;
         }
         if (handScore < MINIMUM_SCORE) {
