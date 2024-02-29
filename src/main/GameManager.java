@@ -14,14 +14,16 @@ public class GameManager {
 
     private void populatePlayers() {
         players.add(new Bot("BasicBot"));
+        players.add(new CharlieBot("Charlie"));
         players.add(new FirstPlaceBot("FirstPlaceBot"));
         players.add(new RiskyBotCR("RiskyBot"));
         players.add(new WimpyBotCR("WimpyBot"));
         players.add(new RandomBot("RandomBot"));
         players.add(new MinBot("MinBot"));
         players.add(new SuperBot("SuperBot"));
+        
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 8; i++) {
             scores.add(0);
         }
 

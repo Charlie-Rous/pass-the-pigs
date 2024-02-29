@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class FirstPlaceBot extends Bot {
-    private final int MINIMUM_SCORE = 15;
+    private final int MINIMUM_SCORE = 21;
 
     public FirstPlaceBot(String s) {
         super(s);
